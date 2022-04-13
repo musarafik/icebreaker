@@ -1,15 +1,11 @@
 import React, {useState, useEffect} from "react";
-import { herokuUrl } from "../config";
+import { buildUrl } from "../utilities";
 
 function AllQuestions() {
     const [questions, setQuestions] = useState([]);
 
     useEffect(() => {
-        let url = "http://localhost:8080/all";
-        if(process.env.NODE_ENV === "production"){
-            url = herokuUrl + "/all";
-        }
-        fetch(url)
+        fetch(buildUrl("/all"))
         .then(response => response.json())
         .then(response => response["questions"])
         .then(questionsList => setQuestions(questionsList));
