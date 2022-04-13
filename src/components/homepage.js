@@ -1,10 +1,15 @@
 import React, {useEffect, useState} from "react";
+import { herokuUrl } from "../config";
 
 function HomePage() {
     const [question, setQuestion] = useState(null);
 
     useEffect(() => {
-        fetch("http://localhost:8080/single")
+        let url = "http://localhost:8080/single";
+        if(process.env.NODE_ENV === "production"){
+            url = herokuUrl + "/single";
+        }
+        fetch(url)
         .then(response => response.json())
         .then(response => response["question"])
         .then(qstn => setQuestion(qstn));
