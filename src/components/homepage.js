@@ -5,10 +5,11 @@ function HomePage() {
     const [question, setQuestion] = useState(null);
 
     useEffect(() => {
-        let url = "http://localhost:8080/single";
-        if(process.env.NODE_ENV === 'production'){
-            url = herokuUrl + "/single";
-        }
+        // let url = "http://localhost:8080/single";
+        // if(process.env.NODE_ENV === 'production'){
+        //     url = herokuUrl + "/single";
+        // }
+        let url = herokuUrl + "/single";
         fetch(url)
         .then(response => response.json())
         .then(response => response["question"])
