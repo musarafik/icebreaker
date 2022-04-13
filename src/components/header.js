@@ -6,7 +6,6 @@ function Header() {
         <div>
             <nav>
                 <Link to="/">Home</Link>
-                <Link to="about">About</Link>
                 <Link to="all">All Questions</Link>
             </nav>
             <Outlet/>
