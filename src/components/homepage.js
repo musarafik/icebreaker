@@ -16,10 +16,19 @@ function HomePage() {
         .then(qstn => setQuestion(qstn));
     }, []);
 
+    const getNewQuestion = () => {
+        let url = herokuUrl + "/single";
+        fetch(url)
+        .then(response => response.json())
+        .then(response => response["question"])
+        .then(qstn => setQuestion(qstn));
+    }
+
     return (
         <div>
             <h1>Welcome to Ice Breaker!</h1>
             <p>{question}</p>
+            <button onClick={getNewQuestion}>Click for a new question</button>
         </div>
     );
 }
