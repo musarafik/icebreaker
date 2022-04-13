@@ -6,7 +6,7 @@ function HomePage() {
 
     useEffect(() => {
         let url = "http://localhost:8080/single";
-        if(process.env.NODE_ENV === "production"){
+        if(process.env.NODE_ENV === 'production'){
             url = herokuUrl + "/single";
         }
         fetch(url)
