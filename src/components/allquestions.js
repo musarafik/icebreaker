@@ -9,8 +9,6 @@ function AllQuestions() {
         if(process.env.NODE_ENV === "production"){
             url = herokuUrl + "/all";
         }
-        console.log("Environment is in " + process.env.NODE_ENV);
-        // let url = herokuUrl + "/all";
         fetch(url)
         .then(response => response.json())
         .then(response => response["questions"])
