@@ -5,13 +5,14 @@ function HomePage() {
     const [question, setQuestion] = useState(null);
 
     useEffect(() => {
-        fetch(buildUrl("/single"))
-        .then(response => response.json())
-        .then(response => response["question"])
-        .then(qstn => setQuestion(qstn));
+        getAndSetQuestion();
     }, []);
 
     const getNewQuestion = () => {
+        getAndSetQuestion();
+    }
+
+    const getAndSetQuestion = () => {
         fetch(buildUrl("/single"))
         .then(response => response.json())
         .then(response => response["question"])
