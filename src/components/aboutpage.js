@@ -4,7 +4,7 @@ function AboutPage() {
     return (
         <div>
             <h1>about </h1>
-            <p>hifas;dfjsdl</p>
+            <p>To Do</p>
         </div>
     );
 }

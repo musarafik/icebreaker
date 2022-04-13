@@ -1,9 +1,19 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 
 function HomePage() {
+    const [question, setQuestion] = useState(null);
+
+    useEffect(() => {
+        fetch("http://localhost:8080/single")
+        .then(response => response.json())
+        .then(response => response["question"])
+        .then(qstn => setQuestion(qstn));
+    }, []);
+
     return (
         <div>
-            <p>homepage</p>
+            <h1>Welcome to Ice Breaker!</h1>
+            <p>{question}</p>
         </div>
     );
 }
