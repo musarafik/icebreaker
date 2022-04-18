@@ -1,0 +1,9 @@
+div {
+    display: flex;
+    flex-direction: column;
+}
+
+.question-answer-container {
+    align-items: center;
+    margin-top: 5%;
+}

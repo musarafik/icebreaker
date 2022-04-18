@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react";
 import { buildUrl } from "../utilities";
+import "./homepage.css";
 
 function HomePage() {
     const [question, setQuestion] = useState(null);
@@ -21,9 +22,11 @@ function HomePage() {
 
     return (
         <div>
-            <h1>Welcome to Ice Breaker!</h1>
-            <p>{question}</p>
-            <button onClick={getNewQuestion}>Click for a new question</button>
+            <h1 style={{textAlign:"center"}}>Welcome to Ice Breaker!</h1>
+            <div className="question-answer-container">
+                <p>{question}</p>
+                <button onClick={getNewQuestion}>Click for a new question</button>
+            </div>
         </div>
     );
 }
