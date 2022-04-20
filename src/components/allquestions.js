@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 import { buildUrl } from "../utilities";
+import "./allquestions.css";
 
 function AllQuestions() {
     const [questions, setQuestions] = useState([]);
@@ -13,7 +14,7 @@ function AllQuestions() {
 
     return (
         <div>
-            <h1>Take a look at all the questions we have!</h1>
+            <h1 style={{textAlign:"center"}}>Take a look at all the questions we have!</h1>
             {questions.map((question, i) => (
                 <p key={i}>{question}</p>
             ))}
